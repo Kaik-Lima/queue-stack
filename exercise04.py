@@ -4,4 +4,16 @@
 
 import queue
 
-fila = queue.LifoQueue()
+
+def prioridade(expr):
+    fila = queue.PriorityQueue()
+    # Enfileirando
+    n = expr.split()
+
+    for contador in n:
+        fila.put(int(contador))
+    # Desenfilerando
+    for contador in n:
+        print(fila.get(contador), end= ' ')
+
+prioridade('7 -1 5 2 14 -13')
